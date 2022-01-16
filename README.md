@@ -1,6 +1,7 @@
 
 # auto-desengage-direct-pcb
-ina260 directly on pcbv2
+ina260 directly on pcbv2 5.2.2  tested approved
+
 
 wire ina on pcbv2 agopengps or any other pcb like picture, use dedicaced ino and set target on software with current option
 
