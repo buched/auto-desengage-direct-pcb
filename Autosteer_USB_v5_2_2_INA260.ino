@@ -372,22 +372,18 @@ Adafruit_INA260 ina260 = Adafruit_INA260();                 // Déclaration Vari
         int8_t consigne = steerConfig.PulseCountMax;                 // Rajout INA260 Coupure Auto Volant : Lecture de la consigne AOG PulseCountMAx. Sert à Lecture impulsion, lecture pression et lecture Courant dans AOG. Ici considéré comme lecture Puissance en Watts
         unsigned long int analogValue = ina260.readPower();
         
-                if (pwmDrive < 60)
-          {
-            consigne = consigne;
-          }
-        else if (pwmDrive >= 60 && pwmDrive < 80 )
-          {
-            consigne = consigne * 2;
-          }
-        else if (pwmDrive > 80)
-          {
-            consigne = consigne * 5;
-          }
-        // else if (pwmDrive >= 150 && pwmDrive <= 255 )
-        //   {
-         //   consigne = consigne * 2.5;
-        // }
+          if (pwmDrive < 60)
+            {
+              consigne = consigne;
+            }
+          else if (pwmDrive >= 60 && pwmDrive < 80 )
+            {
+              consigne = consigne * 1.5;
+            }
+          else if (pwmDrive > 80)
+            {
+              consigne = consigne * 2;
+            }
       
         if ((abs(analogValue)/ 1000) >= consigne)                   // Rajout INA260 Coupure Auto Volant : Si valeur mesurée en A supérieure à la consigne en A alors désengament
         {
